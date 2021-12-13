@@ -9,7 +9,7 @@ Another project I was involved in, doing some changes/adding new functions to ou
 
 I created desired working area where you choose which county you would like to work in, the checkbox questions, the database fields and the overview of the applicants in Filemaker.
 
-Technology used: SQL,  Service stack (ASP.NET), HTML, Filemaker.
+Technology used: SQL,  Service stack (ASP.NET), HTML, CSS, Filemaker.
 
 
 Following Images represent required fields applicants were forced to fill in order to apply for work.
