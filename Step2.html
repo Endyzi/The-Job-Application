@@ -1,0 +1,66 @@
+﻿<div class="stepwizard">
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle">1</button>
+            <p class="hidden-xs">Personuppgifter</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-primary btn-circle">2</button>
+            <p>Erfarenheter</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle" disabled="disabled">3</button>
+            <p class="hidden-xs">Utbildningar</p>
+        </div> 
+                <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle" disabled="disabled">4</button>
+            <p class="hidden-xs">Skicka ansökan</p>
+        </div> 
+    </div>
+</div>
+
+<div>
+    <form name="step2Form" class="form-horizontal">
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="workcurrent">Senaste arbetsplats</label>
+                <div class="col-md-4">
+                    <input name="workcurrent" class="form-control input-md" id="workcurrent" ng-model="step2Model.WorkCurrent" ng-maxlength="2000" type="text" placeholder="Företaget AB, Grevie">
+                </div>                
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="currentworkdescription">Arbetsbeskrivning</label>
+                <div class="col-md-4">
+                    <textarea name="currentworkdescription" rows="5" class="form-control" ng- ng-model="step2Model.WorkCurrentDescription" ng-maxlength="4000" placeholder="Mina huvudsakliga arbetsuppgifter var..." id="currentworkdescription"></textarea>
+                </div>
+                <div style="color: red" data-ng-show="step2Form.currentworkdescription.$invalid" class="col-md-4 help-block">Begränsa texten till 4000 tecken.</div>
+            </div>
+
+            <div class="row">&nbsp;</div>
+            <div class="row">&nbsp;</div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="experience">Övriga erfarenheter</label>
+                <div class="col-md-4">
+                    <textarea name="experience" rows="10" class="form-control" ng-maxlength="4000" ng-model="step2Model.Experience" id="experience"></textarea>
+                </div>
+                <div style="color: red" data-ng-show="step2Form.experience.$invalid" class="col-md-4 help-block">Begränsa texten till 4000 tecken.</div>
+            </div>
+
+            
+            <!-- Button -->
+            <div class="form-group">
+                 <div class="col-md-4"></div>
+                <div class="col-md-4 text-right">
+                    <button name="singlebutton" class="btn" ng-click="previous()" id="previous">Föregående</button>
+                    <button name="singlebutton" class="btn btn-primary" ng-click="step3(step2Form.$valid)" id="next">Nästa steg</button>
+                </div>
+            </div>
+
+
+    </form>
+
+</div>

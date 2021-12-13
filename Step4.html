@@ -1,0 +1,164 @@
+﻿<div class="stepwizard">
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle">1</button>
+            <p class="hidden-xs">Personuppgifter</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle">2</button>
+            <p class="hidden-xs">Erfarenheter</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle">3</button>
+            <p class="hidden-xs">Utbildningar</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-primary btn-circle">4</button>
+            <p>Skicka ansökan</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <form class="form-horizontal" action="apply" method="POST" enctype="multipart/form-data" ng-submit="submit()">
+        <!-- Select Multiple -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="preferredWorkplace">Önskad arbetsort</label>
+
+            <div class="col-md-4">
+                <select id="preferredWorkplace" name="preferredWorkplace" ng-model="selectedItem" ng-change="addworkplace()" class="form-control">
+                    <option value="Göteborg">Göteborg</option>
+                    <option value="Helsingborg">Helsingborg</option>
+                    <option value="Jönköping">Jönköping</option>
+                    <option value="Karlstad">Karlstad</option>
+                    <option value="Lund">Lund</option>
+                    <option value="Malmö">Malmö</option>
+                    <option value="Norrtälje">Norrtälje</option>
+                    <option value="Stockholm">Stockholm</option>
+                    <option value="Södertälje">Södertälje</option>
+                    <option value="Trollhättan">Trollhättan</option>
+                    <option value="Ulricehamn">Ulricehamn</option>
+                    <option value="Umeå">Umeå</option>
+                    <option value="Vimmerby">Vimmerby</option>
+                    <option value="Växjö">Växjö</option>
+                    <option value="Örebro">Örebro</option>
+                    <option value="Karlshamn">Karlshamn</option>
+                    <option value="Kalmar">Kalmar</option>
+                    <option value="Borås">Borås</option>
+                    <option value="Varberg">Varberg</option>
+                    <option value="Kungälv">Kungälv</option>
+                    <option value="Lerum">Lerum</option>
+                    <option value="Uddevalla">Uddevalla</option>
+                    <option value="Mariestad">Mariestad</option>
+                    <option value="Karlskoga">Karlskoga</option>
+                    <option value="Enköping">Enköping</option>
+                    <option value="Uppsala">Uppsala</option>
+                    <option value="Falun">Falun</option>
+                    <option value="Hudiksvall">Hudiksvall</option>
+                    <option value="Lycksele">Lycksele</option>
+                    <option value="Skellefteå">Skellefteå</option>
+                    <option value="Piteå">Piteå</option>
+                    <option value="Luleå">Luleå</option>
+                </select>
+                <div class="help-block">Välj ett eller flera områden.</div>
+
+                <div class="row" data-ng-repeat="workplace in step4Model.PreferredWorkplaces">
+                    <div class="col-xs-10">{{workplace}}</div>
+                    <div class="col-xs-1"><a href data-ng-click="removeworkplace($index)"><span class="glyphicon glyphicon-remove"></span></a></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">&nbsp;</div>
+
+
+
+
+        <!-- Multiple Checkboxes -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="bla">Välj</label>
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label for="driverslicense">
+                        <input name="bla" id="driverslicense" ng-model="step4Model.DriversLicense" type="checkbox" value="">
+                        Jag innehar körkort
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="car">
+                        <input name="bla" id="car" ng-model="step4Model.Car" type="checkbox" value="">
+                        Jag har tillgång till bil
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="swedish">
+                        <input name="bla" id="swedish" ng-model="step4Model.Swedish" type="checkbox" value="">
+                        Jag hanterar svenska i tal/skrift
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="costumerexperience">
+                        <input name="bla" id="costumerexperience" ng-model="step4Model.CostumerExperience" type="checkbox" value="">
+                        Kunderfarenhet
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="youthexperience">
+                        <input name="bla" id="youthexperience" ng-model="step4Model.YouthExperience" type="checkbox" value="">
+                        Ungdom/Barn erfarenhet
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">&nbsp;</div>
+        <div class="row">&nbsp;</div>
+        <div class="row">&nbsp;</div>
+
+
+        <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="fileCv">Cv</label>
+            <div class="col-md-4">
+                <input id="fileCv" name="CV" class="input-file" accept=".pdf,.doc,.docx,.odt,.xls,.xlsx" file-model="step4Model.FileCv" type="file">
+            </div>
+            <div class="col-md-4 help-block">(max 7mb)</div>
+        </div>
+        <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="filePersonal">Personligt brev</label>
+            <div class="col-md-4">
+                <input id="filePersonal" name="Pers brev" file-model="step4Model.FilePersonalLetter" class="input-file" accept=".pdf,.doc,.docx,.odt,.xls,.xlsx" type="file">
+            </div>
+            <div class="col-md-4 help-block">(max 7mb)</div>
+        </div>
+        <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="fileImage">Personlig bild</label>
+            <div class="col-md-4">
+                <input id="fileImage" name="Bild" file-model="step4Model.FileProfileImage" class="input-file" accept=".jpg" type="file">
+            </div>
+            <div class="col-md-4 help-block">(max 4mb)</div>
+        </div>
+
+        <div class="row">&nbsp;</div>
+        <div class="row">&nbsp;</div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-right">
+                <button type="button" class="btn" ng-click="previous()">Föregående</button>
+                <button type="submit" ng-disabled="isSubmitted" class="btn btn-success button-custom">Ansök</button>
+            </div>
+        </div>
+
+
+        <input type="hidden" name="stepmodels" value="{{stepmodels() | json}}" />
+
+    </form>
+</div>

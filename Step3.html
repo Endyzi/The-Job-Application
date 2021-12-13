@@ -1,0 +1,60 @@
+﻿<div class="stepwizard">
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle">1</button>
+            <p class="hidden-xs">Personuppgifter</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle">2</button>
+            <p class="hidden-xs">Erfarenheter</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-primary btn-circle">3</button>
+            <p>Utbildningar</p>
+        </div> 
+                <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle">4</button>
+            <p class="hidden-xs">Skicka ansökan</p>
+        </div> 
+    </div>
+</div>
+
+<div>
+    <form name="step3Form" class="form-horizontal">
+
+
+            
+                        <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="education">Genomförda utbildningar</label>
+                <div class="col-md-4">
+                    <textarea name="education" rows="5" class="form-control" ng-model="step3Model.Education" ng-maxlength="4000" placeholder="Fotoutbildning A - 1999-2002" id="education"></textarea>
+                </div>
+                <div style="color: red" data-ng-show="step3Form.education.$invalid" class="col-md-4 help-block">Begränsa texten till 4000 tecken.</div>
+            </div>
+
+            <div class="row">&nbsp;</div>
+            <div class="row">&nbsp;</div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="photoexperience">Övriga fotokunskaper</label>
+                <div class="col-md-4">
+                    <textarea name="photoexperience" rows="10" class="form-control" ng-maxlength="4000" ng-model="step3Model.PhotoExperience" id="photoexperience"></textarea>
+                </div>
+                <div style="color: red" data-ng-show="step3Form.photoexperience.$invalid" class="col-md-4 help-block">Begränsa texten till 4000 tecken.</div>
+            </div>
+
+            
+            <!-- Button -->
+            <div class="form-group">
+                 <div class="col-md-4"></div>
+                <div class="col-md-4 text-right">
+                    <button name="singlebutton" class="btn" ng-click="previous()" id="previous">Föregående</button>
+                    <button name="singlebutton" class="btn btn-primary" ng-click="step4(step3Form.$valid)" id="next">Nästa steg</button>
+                </div>
+            </div>
+
+    </form>
+
+</div>
