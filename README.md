@@ -31,5 +31,5 @@ View of the fields in database
 ![sql](https://user-images.githubusercontent.com/34267140/145796798-dc0dcd8b-9d46-4365-9829-e741b78ad5c2.jpg)
 
 
-Overview of the applicants once they have been fetched into Filemaker.
+Overview of the applicants once they have been fetched into Filemaker. In this view we can sort by different values, where the default is sorted by latest applicant.
 ![exaktajobbansökan5](https://user-images.githubusercontent.com/34267140/145796795-a429e9e2-8b71-4f14-b578-0b4860e88b17.JPG)
